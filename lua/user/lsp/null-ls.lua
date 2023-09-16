@@ -14,6 +14,7 @@ local code_actions = null_ls.builtins.code_actions
 null_ls.setup {
   debug = false,
   sources = {
+    formatting.yamlfmt,
     formatting.shellharden,
     diagnostics.shellcheck,
     formatting.stylelint,
