@@ -330,10 +330,15 @@ local w_mappings = {
   ["d"] = { "<Plug>VimwikiDeleteFile", "Delete file" },
   ["k"] = { "<Plug>VimwikiIndex", "VimWiki index" },
   ["i"] = { "<Plug>VimwikiDiaryIndex", "VimWiki diary index" },
+  ["s1"] = { "<cmd>Telescope vimwiki i=0<CR>", "VimWiki Select" },
+  ["s2"] = { "<cmd>Telescope vimwiki i=1<CR>", "VimWiki Select" },
+  ["s3"] = { "<cmd>Telescope vimwiki i=2<CR>", "VimWiki Select" },
+  ["g1"] = { "<cmd>Telescope vimwiki live_grep i=0<CR>", "VimWiki grep" },
+  ["g2"] = { "<cmd>Telescope vimwiki live_grep i=1<CR>", "VimWiki grep" },
   ["t"] = { "<Plug>VimwikiMakeDiaryNote", "Today's diary" },
   ["y"] = { "<Plug>VimwikiMakeYesterdayDiaryNote", "Yesterday's diary" },
   ["m"] = { "<Plug>VimwikiMakeTomorrowDiaryNote", "Tomorrow's diary" },
-  ["u"] = { "<Plug>VimwikiDiaryGenerateLinks", "Wiki UI Select" },
+  ["u"] = { "<Plug>VimwikiDiaryGenerateLinks", "Wiki index update" },
   ["x"] = { "<cmd>VimwikiUISelec<CR>", "Wiki UI Select" },
   ["n"] = { "<Plug>VimwikiNextLink" }
 }
