@@ -86,6 +86,13 @@ return packer.startup(function(use)
 
   use 'nacro90/numb.nvim'
 
+  use 'csscomb/vim-csscomb'
+
+  use 'wakatime/vim-wakatime'
+
+  use 'ThePrimeagen/harpoon'
+
+
   -- use 'sunjon/shade.nvim'
   use '0x100101/Shade.nvim'
   use "tjdevries/colorbuddy.nvim"

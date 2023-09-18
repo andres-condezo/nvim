@@ -259,6 +259,11 @@ _G.packer_plugins = {
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/gruvbox-baby",
     url = "https://github.com/luisiacc/gruvbox-baby"
   },
+  harpoon = {
+    loaded = true,
+    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/ThePrimeagen/harpoon"
+  },
   ["hlargs.nvim"] = {
     loaded = true,
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/hlargs.nvim",
@@ -599,6 +604,11 @@ _G.packer_plugins = {
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/vim-code-dark",
     url = "https://github.com/tomasiser/vim-code-dark"
   },
+  ["vim-csscomb"] = {
+    loaded = true,
+    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/vim-csscomb",
+    url = "https://github.com/csscomb/vim-csscomb"
+  },
   ["vim-dadbod"] = {
     loaded = true,
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/vim-dadbod",
@@ -713,6 +723,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/vim-vsnip",
     url = "https://github.com/hrsh7th/vim-vsnip"
+  },
+  ["vim-wakatime"] = {
+    loaded = true,
+    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/vim-wakatime",
+    url = "https://github.com/wakatime/vim-wakatime"
   },
   vimwiki = {
     loaded = true,

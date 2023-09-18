@@ -1,6 +1,7 @@
 # Neovim Configuration
 This repository contains my personal configuration for Neovim (nvim), a highly customizable text editor that I use for coding and text editing. 
-![img](./img/nvim-screenshot.png)
+
+![greeter-screenshot](./img/nvim-screenshot.png)
 
 ## Acknowledgments
 This configuration is based on the following repositories:

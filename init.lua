@@ -78,6 +78,7 @@ require "user.copilot"
 require "user.todo-comments"
 require "user.globals"
 require "user.numb_cfg"
+require "user.harpoon_cfg"
 
 -- To Check
 -- require "user.eslint_cfg"
