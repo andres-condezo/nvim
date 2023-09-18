@@ -19,7 +19,7 @@ Hydra({
       end
    },
    mode = {'n','x'},
-   body = 'mhk',
+   body = ',hk',
    heads = {
       -- Motion
       { '<C-j>', '}', { silent = true } },

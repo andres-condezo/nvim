@@ -87,10 +87,13 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 keymap("n", "<A-r>", ":Reload<CR>", opts)
 
 -- comand line
-keymap('n', ',', '<cmd>FineCmdline<CR>', opts)
+-- keymap('n', ',', '<cmd>FineCmdline<CR>', opts)
 
 -- keymap('n', 'mmw', 'lua telescope_vimwiki_categories_picker()<CR>', opts)
 
 keymap("n", "ñd", ":colorscheme kanagawa<CR> | :set background=dark<CR> | :source ~/.config/nvim/lua/user/lualine-t_cfg.lua<CR>", opts)
 keymap("n", "ñl", ":colorscheme kanagawa<CR> | :set background=light<CR> | :source ~/.config/nvim/lua/user/lualine-t.lua<CR>", opts)
 -- keymap("n", "ññ", ":colorscheme kanagawa<CR> | :set background=light<CR>", opts)
+
+-- Go to mark
+keymap("n", "M", "'", opts)

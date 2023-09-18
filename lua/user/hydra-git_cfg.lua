@@ -33,7 +33,7 @@ Hydra({
       end
    },
    mode = {'n','x'},
-   body = 'mhg',
+   body = ',hg',
    heads = {
       { 'J', function()
             if vim.wo.diff then return ']c' end

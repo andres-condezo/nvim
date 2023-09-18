@@ -8,7 +8,7 @@ Hydra({
       }
    },
    mode = 'n',
-   body = 'mhw',
+   body = ',hw',
    heads = {
       -- Move focus
       { 'h', '<C-w>h' },

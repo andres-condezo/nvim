@@ -19,7 +19,7 @@ Hydra({
       end
    },
    mode = {'n','x'},
-   body = 'mhm',
+   body = ',hm',
    heads = {
       -- Index
       { 'II', '<C-w>h', { silent = true } },
