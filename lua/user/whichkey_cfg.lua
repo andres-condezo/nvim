@@ -335,6 +335,7 @@ local w_mappings = {
   ["s3"] = { "<cmd>Telescope vimwiki i=2<CR>", "VimWiki Select" },
   ["g1"] = { "<cmd>Telescope vimwiki live_grep i=0<CR>", "VimWiki grep" },
   ["g2"] = { "<cmd>Telescope vimwiki live_grep i=1<CR>", "VimWiki grep" },
+  ["g3"] = { "<cmd>lua require('telescope').extensions.vw.live_grep({default_text = 'keymaps'})<cr>", "VimWiki grep" },
   ["t"] = { "<Plug>VimwikiMakeDiaryNote", "Today's diary" },
   ["y"] = { "<Plug>VimwikiMakeYesterdayDiaryNote", "Yesterday's diary" },
   ["m"] = { "<Plug>VimwikiMakeTomorrowDiaryNote", "Tomorrow's diary" },

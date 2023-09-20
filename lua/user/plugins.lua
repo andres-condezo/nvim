@@ -92,6 +92,8 @@ return packer.startup(function(use)
 
   use 'ThePrimeagen/harpoon'
 
+  use 'jremmen/vim-ripgrep'
+
 
   -- use 'sunjon/shade.nvim'
   use '0x100101/Shade.nvim'

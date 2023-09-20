@@ -30,3 +30,4 @@ end
 keymap("n", "<C-r>", ":lua clear_redo()<CR>", opts)
 keymap("n", "U", ":lua clear_redo()<CR>", opts)
 keymap("n", "u", ":lua clear_undo()<CR>", opts)
+keymap("n", "<leader>u", ":exec 'undo' undotree()['seq_last']<CR>", opts)

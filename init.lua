@@ -95,4 +95,3 @@ require "user.harpoon_cfg"
 -- require "user.indentline_cfg"
 -- require "user.toggleterm_cfg"
 -- require "user.illuminate_cfg"
-
