@@ -1,41 +1,41 @@
-local Hydra = require('hydra')
+local Hydra = require("hydra")
 
 Hydra({
-   config = {
-      color = 'pink',
-      invoke_on_body = true,
-      -- hint = {
-      --    position = 'bottom',
-      --    border = 'rounded'
-      -- },
-      on_enter = function()
-         -- vim.bo.modifiable = false
-         vim.cmd "let g:table_mode_corner='|'"
-         vim.cmd "colorscheme everforest"
-      end,
-      on_exit = function()
-         vim.cmd "colorscheme onedark"
-         vim.cmd 'echo' -- clear the echo area
-      end
-   },
-   mode = {'n','x'},
-   body = ',hk',
-   heads = {
-      -- Motion
-      { '<C-j>', '}', { silent = true } },
-      { '<C-k>', '{', { silent = true } },
-      { 'L', ':VimwikiFollowLink<CR>', { silent = true } },
-      { 'H', ':VimwikiGoBackLink<CR>', { silent = true } },
-      { 'J', ':VimwikiNextLink<CR>', { silent = true } },
-      { 'K', ':VimwikiPrevLink<CR>', { desc = "<-Motion|", silent = true } },
+	config = {
+		color = "pink",
+		invoke_on_body = true,
+		-- hint = {
+		--    position = 'bottom',
+		--    border = 'rounded'
+		-- },
+		on_enter = function()
+			-- vim.bo.modifiable = false
+			vim.cmd("let g:table_mode_corner='|'")
+			vim.cmd("colorscheme everforest")
+		end,
+		on_exit = function()
+			vim.cmd("colorscheme onedark")
+			vim.cmd("echo") -- clear the echo area
+		end,
+	},
+	mode = { "n", "x" },
+	body = ",hk",
+	heads = {
+		-- Motion
+		{ "<C-j>", "}", { silent = true } },
+		{ "<C-k>", "{", { silent = true } },
+		{ "L", ":VimwikiFollowLink<CR>", { silent = true } },
+		{ "H", ":VimwikiGoBackLink<CR>", { silent = true } },
+		{ "J", ":VimwikiNextLink<CR>", { silent = true } },
+		{ "K", ":VimwikiPrevLink<CR>", { desc = "<-Motion|", silent = true } },
 
-      -- Quit
-      { '<Esc>', nil,  { exit = true }},
-      { 'q', nil, { exit = true, nowait = true } },
-   }
+		-- Quit
+		{ "<Esc>", nil, { exit = true } },
+		{ "q", nil, { exit = true, nowait = true } },
+	},
 })
 
-vim.cmd [[
+vim.cmd([[
    let tech_wiki = {}
    let tech_wiki.path = '~/vimwiki/tech_docs/'
    let tech_wiki.index = 'index'
@@ -62,8 +62,8 @@ vim.cmd [[
 
    let g:vimwiki_list = [personal_wiki, tech_wiki, shopping_wiki]
    let g:vimwiki_markdown_link_ext = 1
+   let g:vimwiki_listsyms = ' ○✗'
+]])
 
-   let g:vimwiki_listsyms = ' ○◐●✗'
-]]
-
-require('telescope').load_extension('vimwiki')
+-- let g:vimwiki_listsyms = ' ○◐●✗'
+require("telescope").load_extension("vimwiki")

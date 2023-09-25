@@ -85,14 +85,11 @@ return packer.startup(function(use)
   }
 
   use 'nacro90/numb.nvim'
-
   use 'csscomb/vim-csscomb'
-
   use 'wakatime/vim-wakatime'
-
   use 'ThePrimeagen/harpoon'
-
   use 'jremmen/vim-ripgrep'
+  use 'jacquesbh/vim-showmarks'
 
 
   -- use 'sunjon/shade.nvim'

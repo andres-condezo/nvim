@@ -689,6 +689,11 @@ _G.packer_plugins = {
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/vim-ruby",
     url = "https://github.com/vim-ruby/vim-ruby"
   },
+  ["vim-showmarks"] = {
+    loaded = true,
+    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/vim-showmarks",
+    url = "https://github.com/jacquesbh/vim-showmarks"
+  },
   ["vim-smoothie"] = {
     loaded = true,
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/vim-smoothie",
@@ -769,8 +774,8 @@ time([[Defining lazy-load commands]], false)
 
 -- Keymap lazy-loads
 time([[Defining lazy-load keymaps]], true)
-vim.cmd [[nnoremap <silent> gS <cmd>lua require("packer.load")({'splitjoin.vim'}, { keys = "gS", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[nnoremap <silent> gJ <cmd>lua require("packer.load")({'splitjoin.vim'}, { keys = "gJ", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[nnoremap <silent> gS <cmd>lua require("packer.load")({'splitjoin.vim'}, { keys = "gS", prefix = "" }, _G.packer_plugins)<cr>]]
 time([[Defining lazy-load keymaps]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
