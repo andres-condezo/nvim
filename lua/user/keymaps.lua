@@ -58,8 +58,8 @@ keymap("v", ">", ">gv", opts)
 -- Paste
 keymap("v", "p", '"_dP', opts)
 
-keymap("n", "n", 'nzz', opts)
-keymap("n", "N", 'Nzz', opts)
+keymap("n", "n", "nzz", opts)
+keymap("n", "N", "Nzz", opts)
 
 -- Visual Block --
 
@@ -91,9 +91,41 @@ keymap("n", "<A-r>", ":Reload<CR>", opts)
 
 -- keymap('n', 'mmw', 'lua telescope_vimwiki_categories_picker()<CR>', opts)
 
-keymap("n", "ñd", ":colorscheme codedark<CR> | :set background=dark<CR> | :source ~/.config/nvim/lua/user/lualine-t_cfg.lua<CR>", opts)
-keymap("n", "ñl", ":colorscheme onedark<CR> | :set background=light<CR> | :source ~/.config/nvim/lua/user/lualine-t.lua<CR>", opts)
+keymap(
+	"n",
+	"ñd",
+	":lua require('vscode').load('dark')<CR> | :source ~/.config/nvim/lua/user/lualine-t_cfg.lua<CR>",
+	opts
+)
+keymap(
+	"n",
+	"ñl",
+	":lua require('vscode').load('light')<CR> | :source ~/.config/nvim/lua/user/lualine-t.lua<CR>",
+	opts
+)
+-- ":set background=dark<CR> | :colorscheme codedark<CR> | :source ~/.config/nvim/lua/user/lualine-t_cfg.lua<CR>",
+-- ":set background=light<CR> | :colorscheme onedark<CR> | :source ~/.config/nvim/lua/user/lualine-t.lua<CR>",
 -- keymap("n", "ññ", ":colorscheme kanagawa<CR> | :set background=light<CR>", opts)
 
 -- Go to mark
 keymap("n", "M", "'", opts)
+--
+-- xnoremap il g_o^
+-- onoremap il :normal vil<CR>
+-- xnoremap al $o^
+-- onoremap al :normal val<CR>
+
+-- vim.api.nvim_set_keymap("x", "il", "g_o^", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("o", "il", ":normal! vil<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("x", "al", "$o^", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("o", "al", ":normal! val<CR>", { noremap = true, silent = true })
+
+-- vim.api.nvim_set_keymap('n', 'ñr', ":vimgrep <cword> **/*.tsx<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "ñf", ':grep! "<cword>" . -r<CR>:copen<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+	"n",
+	"ñf",
+	":execute 'Telescope live_grep default_text=' . expand('<cword>')<cr>",
+	{ noremap = true, silent = true }
+)
+-- nnoremap <F4> :grep! "\<<cword>\>" . -r<CR>:copen<CR>

@@ -128,6 +128,8 @@ local mappings = {
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
   ["Q"] = { "<cmd>qa!<CR>", "Close all windows" },
+  ["V"] = { "ggVG", "Select all" },
+  ["D"] = { "ggdd<C-o>", "Delete first line" },
 
   d = {
     name = "DAP",
@@ -236,10 +238,12 @@ local mappings = {
 
   w = {
     name = "Save",
-    a = { "<cmd>wa | :qa<CR>", "Save all buffer and exit" },
+    q = { "<cmd>wa | :qa<CR>", "Save all buffer and exit" },
+    a = { "<cmd>wa<CR>", "Save all buffers" },
     e = { "<cmd>wq<CR>", "Save current buffer and close it" },
     s = { "<cmd>execute 'silent! :w !sudo tee % > /dev/null' | edit!<CR>", "Save with sudo permission" },
     w = { "<cmd>w!<CR>", "Save current buffer" },
+    t = { "ggVGy:q!<CR>", "quit" },
   },
 
   x = {

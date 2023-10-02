@@ -1,6 +1,6 @@
 local M = {}
 
-M.register = "o"
+M.register = "q"
 M.plugin_prefix = "💬"
 M.file_patterns = {
 	javascript = {

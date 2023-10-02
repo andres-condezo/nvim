@@ -52,4 +52,37 @@ function M.toggleCalendar()
   ]]
 end
 
+-- function M.Delmarks()
+--   vim.cmd [[
+--     let l:m = join(filter(
+--        \ map(range(char2nr('a'), char2nr('z')), 'nr2char(v:val)'),
+--        \ 'line("''".v:val) == line(".")'))
+--     if !empty(l:m)
+--         exe 'delmarks' l:m
+--     end
+--   ]]
+-- end
+
+function M.Delmarks()
+  local marks = {}
+  for i = string.byte('a'), string.byte('z') do
+    local mark = vim.fn.nr2char(i)
+    if vim.fn.line("'" .. mark) == vim.fn.line('.') then
+      table.insert(marks, mark)
+    end
+  end
+  if #marks > 0 then
+    vim.cmd('delmarks ' .. table.concat(marks, ''))
+  end
+  for i = string.byte('A'), string.byte('Z') do
+    local mark = vim.fn.nr2char(i)
+    if vim.fn.line("'" .. mark) == vim.fn.line('.') then
+      table.insert(marks, mark)
+    end
+  end
+  if #marks > 0 then
+    vim.cmd('delmarks ' .. table.concat(marks, ''))
+  end
+end
+
 return M

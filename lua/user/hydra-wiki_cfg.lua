@@ -11,10 +11,10 @@ Hydra({
 		on_enter = function()
 			-- vim.bo.modifiable = false
 			vim.cmd("let g:table_mode_corner='|'")
-			vim.cmd("colorscheme everforest")
+			vim.cmd("colorscheme onedark")
 		end,
 		on_exit = function()
-			vim.cmd("colorscheme onedark")
+			vim.cmd("colorscheme codedark")
 			vim.cmd("echo") -- clear the echo area
 		end,
 	},

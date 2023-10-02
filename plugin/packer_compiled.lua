@@ -239,6 +239,11 @@ _G.packer_plugins = {
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/fine-cmdline.nvim",
     url = "https://github.com/VonHeikemen/fine-cmdline.nvim"
   },
+  ["flit.nvim"] = {
+    loaded = true,
+    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/flit.nvim",
+    url = "https://github.com/ggandor/flit.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -269,15 +274,20 @@ _G.packer_plugins = {
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/hlargs.nvim",
     url = "https://github.com/m-demare/hlargs.nvim"
   },
-  ["hop.nvim"] = {
+  ["horizon.nvim"] = {
     loaded = true,
-    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/hop.nvim",
-    url = "https://github.com/phaazon/hop.nvim"
+    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/horizon.nvim",
+    url = "https://github.com/lunarvim/horizon.nvim"
   },
   ["hydra.nvim"] = {
     loaded = true,
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/hydra.nvim",
     url = "https://github.com/anuvyklack/hydra.nvim"
+  },
+  ["iceberg.vim"] = {
+    loaded = true,
+    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/iceberg.vim",
+    url = "https://github.com/cocopon/iceberg.vim"
   },
   ["impatient.nvim"] = {
     loaded = true,
@@ -314,6 +324,21 @@ _G.packer_plugins = {
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
     url = "https://github.com/kdheepak/lazygit.nvim"
   },
+  ["leap-ast.nvim"] = {
+    loaded = true,
+    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/leap-ast.nvim",
+    url = "https://github.com/ggandor/leap-ast.nvim"
+  },
+  ["leap-spooky.nvim"] = {
+    loaded = true,
+    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/leap-spooky.nvim",
+    url = "https://github.com/ggandor/leap-spooky.nvim"
+  },
+  ["leap.nvim"] = {
+    loaded = true,
+    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/leap.nvim",
+    url = "https://github.com/ggandor/leap.nvim"
+  },
   ["lspkind.nvim"] = {
     loaded = true,
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
@@ -345,6 +370,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/material.nvim",
     url = "https://github.com/marko-cerovac/material.nvim"
+  },
+  miramare = {
+    loaded = true,
+    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/miramare",
+    url = "https://github.com/franbach/miramare"
   },
   neon = {
     loaded = true,
@@ -446,6 +476,11 @@ _G.packer_plugins = {
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-treesitter-textobjects"] = {
+    loaded = true,
+    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
+  },
   ["nvim-ts-autotag"] = {
     loaded = true,
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
@@ -475,6 +510,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/onedarker.nvim",
     url = "https://github.com/LunarVim/onedarker.nvim"
+  },
+  ["onenord.nvim"] = {
+    loaded = true,
+    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/onenord.nvim",
+    url = "https://github.com/rmehri01/onenord.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -516,6 +556,11 @@ _G.packer_plugins = {
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/sniprun",
     url = "https://github.com/michaelb/sniprun"
   },
+  spaceduck = {
+    loaded = true,
+    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/spaceduck",
+    url = "https://github.com/pineapplegiant/spaceduck"
+  },
   ["splitjoin.vim"] = {
     keys = { { "n", "gJ" }, { "n", "gS" } },
     loaded = false,
@@ -533,6 +578,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/tabular",
     url = "https://github.com/godlygeek/tabular"
+  },
+  ["targets.vim"] = {
+    loaded = true,
+    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/targets.vim",
+    url = "https://github.com/wellle/targets.vim"
   },
   ["telescope-media-files.nvim"] = {
     loaded = true,
@@ -593,6 +643,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/ultisnips",
     url = "https://github.com/SirVer/ultisnips"
+  },
+  vim = {
+    loaded = true,
+    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/vim",
+    url = "https://github.com/embark-theme/vim"
   },
   ["vim-bbye"] = {
     loaded = true,
@@ -724,6 +779,11 @@ _G.packer_plugins = {
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/vim-textobj-user",
     url = "https://github.com/kana/vim-textobj-user"
   },
+  ["vim-two-firewatch"] = {
+    loaded = true,
+    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/vim-two-firewatch",
+    url = "https://github.com/rakr/vim-two-firewatch"
+  },
   ["vim-visual-multi"] = {
     loaded = true,
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/vim-visual-multi",
@@ -743,6 +803,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/vimwiki",
     url = "https://github.com/vimwiki/vimwiki"
+  },
+  ["vscode.nvim"] = {
+    loaded = true,
+    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/vscode.nvim",
+    url = "https://github.com/Mofiqul/vscode.nvim"
   },
   ["which-key.nvim"] = {
     loaded = true,
@@ -782,7 +847,7 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'vim-markdown', 'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim', 'vim-markdown'}, { ft = "markdown" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]

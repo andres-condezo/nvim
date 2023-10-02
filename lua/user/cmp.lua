@@ -97,13 +97,13 @@ cmp.setup({
 		format = function(entry, vim_item)
 			vim_item.kind = kind_icons[vim_item.kind]
 			vim_item.menu = ({
-        luasnip = "[LuaSnip]",
-        ultisnips = "[UltiSnip]",
-        buffer = "[Buf]",
-        nvim_lsp = "[LSP]",
-        nvim_lua = "[LuaAPI]",
-        cmp_tabnine = "[TabNine]",
-        path = "[Path]",
+				luasnip = "[LuaSnip]",
+				ultisnips = "[UltiSnip]",
+				buffer = "[Buf]",
+				nvim_lsp = "[LSP]",
+				nvim_lua = "[LuaAPI]",
+				cmp_tabnine = "[TabNine]",
+				path = "[Path]",
 				emoji = "[emoji]",
 				npm = "[npm]",
 			})[entry.source.name]
@@ -112,14 +112,14 @@ cmp.setup({
 	},
 	sources = {
 		{ name = "luasnip" },
-		{ name = 'ultisnips' }, -- For ultisnips users.
+		{ name = "ultisnips" }, -- For ultisnips users.
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 		{ name = "cmp_tabnine" },
 		{ name = "buffer" },
 		{ name = "path" },
-    { name = 'emoji' },
-		{ name = 'npm', keyword_length = 4 },
+		{ name = "emoji" },
+		{ name = "npm", keyword_length = 4 },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
@@ -135,29 +135,32 @@ cmp.setup({
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline('/', {
+cmp.setup.cmdline("/", {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
-		{ name = 'buffer' }
-	}
+		{ name = "buffer" },
+	},
 })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
+cmp.setup.cmdline(":", {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = cmp.config.sources({
-		{ name = 'path' }
+		{ name = "path" },
 	}, {
-		{ name = 'cmdline' }
-	})
+		{ name = "cmdline" },
+	}),
 })
 
 -- nvim-cmp highlight groups.
-vim.cmd [[
+vim.cmd([[
 	highlight!      CmpItemMenu       guibg=NONE guifg=grey
-]]
+]])
 
-require'luasnip'.filetype_extend("ruby", {"rails"})
-require'luasnip'.filetype_extend("python", {"django"})
-require'luasnip'.filetype_extend("javascript", {"vue"})
-vim.cmd 'let g:UltiSnipsExpandTrigger="<C-A>x"'
+require("luasnip").filetype_extend("ruby", { "rails" })
+require("luasnip").filetype_extend("python", { "django" })
+require("luasnip").filetype_extend("javascript", { "vue" })
+require("luasnip").filetype_extend("javascript", { "javascriptreact" })
+require("luasnip").filetype_extend("javascript", { "html" })
+require("luasnip.loaders.from_vscode").lazy_load()
+vim.cmd('let g:UltiSnipsExpandTrigger="<C-A>x"')

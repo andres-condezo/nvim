@@ -4,11 +4,11 @@ require("catppuccin").setup({
         light = "latte",
         dark = "mocha",
     },
-    transparent_background = true,
+    transparent_background = false,
     show_end_of_buffer = false, -- show the '~' characters after the end of buffers
     term_colors = false,
     dim_inactive = {
-        enabled = false,
+        enabled = true,
         shade = "dark",
         percentage = 0.1,
     },
