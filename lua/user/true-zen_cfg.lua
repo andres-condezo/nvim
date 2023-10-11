@@ -24,10 +24,10 @@ true_zen.setup({
 			right_padding = 32,
 			top_padding = 1,
 			bottom_padding = 1,
-			ideal_writing_area_width = {0},
+			ideal_writing_area_width = { 0 },
 			auto_padding = true,
 			keep_default_fold_fillchars = true,
-			custom_bg = {"none", ""},
+			custom_bg = { "none", "" },
 			bg_configuration = true,
 			quit = "untoggle",
 			ignore_floating_windows = true,
@@ -43,7 +43,8 @@ true_zen.setup({
 		},
 		focus = {
 			margin_of_error = 5,
-			focus_method = "experimental"
+			focus_method = "experimental",
+			tmux = true,
 		},
 	},
 	integrations = {
@@ -60,11 +61,11 @@ true_zen.setup({
 		express_line = false,
 		lualine = false,
 		lightline = false,
-		feline = false
+		feline = false,
 	},
 	misc = {
 		on_off_commands = false,
 		ui_elements_commands = false,
 		cursor_by_mode = false,
-	}
+	},
 })

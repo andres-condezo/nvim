@@ -65,5 +65,7 @@ vim.cmd([[
    let g:vimwiki_listsyms = ' ○✗'
 ]])
 
+-- let g:vimwiki_list = [{'path': '~/vimwiki/',
+-- \ 'syntax': 'vimwiki', 'ext': '.wiki'}] " default setting shown for clarit
 -- let g:vimwiki_listsyms = ' ○◐●✗'
 require("telescope").load_extension("vimwiki")

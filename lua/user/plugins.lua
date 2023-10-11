@@ -52,6 +52,9 @@ return packer.startup(function(use)
 	use({ "numToStr/Comment.nvim", commit = "97a188a98b5a3a6f9b1b850799ac078faa17ab67" })
 	use({ "JoosepAlviste/nvim-ts-context-commentstring", commit = "32d9627123321db65a4f158b72b757bcaef1a3f4" })
 
+	use("kevinhwang91/rnvimr")
+	use("stevearc/oil.nvim")
+
 	use({ "kyazdani42/nvim-web-devicons", commit = "563f3635c2d8a7be7933b9e547f7c178ba0d4352" })
 	use({ "kyazdani42/nvim-tree.lua", commit = "7282f7de8aedf861fe0162a559fc2b214383c51c" })
 	use({ "akinsho/bufferline.nvim", commit = "83bf4dc7bff642e145c8b4547aa596803a8b4dc4" })
@@ -197,9 +200,11 @@ return packer.startup(function(use)
 	})
 
 	-- VimWiki
-	use({ "vimwiki/vimwiki" })
-	use({ "ElPiloto/telescope-vimwiki.nvim" })
-	use({ "mattn/calendar-vim" })
+	use("vimwiki/vimwiki")
+	use("ElPiloto/telescope-vimwiki.nvim")
+	use("mattn/calendar-vim")
+	-- use("tools-life/taskwiki")
+	use("farseer90718/vim-taskwarrior")
 
 	-- Ruby / Rails
 	use("kana/vim-textobj-user")
@@ -280,9 +285,9 @@ return packer.startup(function(use)
 
 	-- LSP
 	-- use { "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" } -- simple to use language server installer
-	use({ "neovim/nvim-lspconfig", commit = "f11fdff7e8b5b415e5ef1837bdcdd37ea6764dda" }) -- enable LSP
-	use({ "williamboman/mason.nvim", commit = "c2002d7a6b5a72ba02388548cfaf420b864fbc12" })
-	use({ "williamboman/mason-lspconfig.nvim", commit = "0051870dd728f4988110a1b2d47f4a4510213e31" })
+	use("neovim/nvim-lspconfig") -- enable LSP
+	use("williamboman/mason.nvim")
+	use("williamboman/mason-lspconfig.nvim")
 	use({ "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" }) -- for formatters and linters
 	use({ "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" })
 	use("github/copilot.vim")
@@ -329,19 +334,31 @@ return packer.startup(function(use)
 	})
 
 	-- DAP
-	use({ "mfussenegger/nvim-dap", commit = "6b12294a57001d994022df8acbe2ef7327d30587" })
-	use({ "rcarriga/nvim-dap-ui", commit = "1cd4764221c91686dcf4d6b62d7a7b2d112e0b13" })
-	use({ "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" })
+	use("mfussenegger/nvim-dap")
+	use("theHamsta/nvim-dap-virtual-text")
+	use("rcarriga/nvim-dap-ui")
+
+	-- use({ "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" })
+
 	-- use {
 	--   "microsoft/vscode-js-debug",
 	--   opt = true,
 	--   run = "npm install --legacy-peer-deps && npm run compile"
 	-- }
+
 	use({
-		"mxsdev/nvim-dap-vscode-js",
-		commit = "079d0f3713c4649603290dc2ecc765e23e76a9fc",
-		requires = { "mfussenegger/nvim-dap" },
+		"microsoft/vscode-js-debug",
+		opt = true,
+		run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
 	})
+
+	use("mxsdev/nvim-dap-vscode-js")
+
+	-- use({
+	-- 	"mxsdev/nvim-dap-vscode-js",
+	-- 	commit = "079d0f3713c4649603290dc2ecc765e23e76a9fc",
+	-- 	requires = { "mfussenegger/nvim-dap" },
+	-- })
 
 	-- MORE
 	use("sheerun/vim-polyglot")

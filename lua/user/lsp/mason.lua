@@ -1,5 +1,4 @@
 local servers = {
-	"sumneko_lua",
 	"cssls",
 	"stylelint_lsp",
   "emmet_ls",

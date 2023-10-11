@@ -1,14 +1,14 @@
 local Hydra = require('hydra')
 
 Hydra({
+   mode = 'n',
+   body = ',hw',
    config = {
       timeout = 8000,
       hint = {
          border = 'rounded'
       }
    },
-   mode = 'n',
-   body = ',hw',
    heads = {
       -- Move focus
       { 'h', '<C-w>h' },

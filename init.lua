@@ -82,12 +82,13 @@ require("user.globals")
 require("user.numb_cfg")
 require("user.harpoon_cfg")
 require("user.animation")
+require("user.oil_cfg")
 
 -- To Check
 -- require "user.eslint_cfg"
 -- require "user.winbar"
 -- require "user.ale_cfg"
--- require "user.shade"
+require "user.shade"
 -- require "user.tokyodark_cfg"
 -- require "user.tokyonight_cfg"
 -- require "user.alpha_cfg"

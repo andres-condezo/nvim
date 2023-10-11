@@ -97,12 +97,7 @@ keymap(
 	":lua require('vscode').load('dark')<CR> | :source ~/.config/nvim/lua/user/lualine-t_cfg.lua<CR>",
 	opts
 )
-keymap(
-	"n",
-	"ñl",
-	":lua require('vscode').load('light')<CR> | :source ~/.config/nvim/lua/user/lualine-t.lua<CR>",
-	opts
-)
+keymap("n", "ñl", ":lua require('vscode').load('light')<CR> | :source ~/.config/nvim/lua/user/lualine-t.lua<CR>", opts)
 -- ":set background=dark<CR> | :colorscheme codedark<CR> | :source ~/.config/nvim/lua/user/lualine-t_cfg.lua<CR>",
 -- ":set background=light<CR> | :colorscheme onedark<CR> | :source ~/.config/nvim/lua/user/lualine-t.lua<CR>",
 -- keymap("n", "ññ", ":colorscheme kanagawa<CR> | :set background=light<CR>", opts)
@@ -129,3 +124,6 @@ vim.api.nvim_set_keymap(
 	{ noremap = true, silent = true }
 )
 -- nnoremap <F4> :grep! "\<<cword>\>" . -r<CR>:copen<CR>
+
+vim.api.nvim_set_keymap("n", "ño", ":RnvimrToggle<CR>", { noremap = true, silent = true })
+vim.cmd("let g:rnvimr_vanilla = 0")
