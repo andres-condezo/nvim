@@ -11,7 +11,7 @@ Hydra({
 		on_enter = function()
 			-- vim.bo.modifiable = false
 			vim.cmd("let g:table_mode_corner='|'")
-			vim.cmd("colorscheme onedark")
+			vim.cmd("colorscheme everforest")
 		end,
 		on_exit = function()
 			vim.cmd("colorscheme codedark")
@@ -62,10 +62,14 @@ vim.cmd([[
 
    let g:vimwiki_list = [personal_wiki, tech_wiki, shopping_wiki]
    let g:vimwiki_markdown_link_ext = 1
-   let g:vimwiki_listsyms = ' ○✗'
 ]])
 
--- let g:vimwiki_list = [{'path': '~/vimwiki/',
--- \ 'syntax': 'vimwiki', 'ext': '.wiki'}] " default setting shown for clarit
+-- let g:vimwiki_listsyms = ' ○✗'
 -- let g:vimwiki_listsyms = ' ○◐●✗'
 require("telescope").load_extension("vimwiki")
+require("taskwarrior_nvim").setup({
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+})
+-- require("taskwarrior_nvim").browser({"ready"})

@@ -203,8 +203,10 @@ return packer.startup(function(use)
 	use("vimwiki/vimwiki")
 	use("ElPiloto/telescope-vimwiki.nvim")
 	use("mattn/calendar-vim")
-	-- use("tools-life/taskwiki")
+	use("tools-life/taskwiki")
 	use("farseer90718/vim-taskwarrior")
+	-- use("ribelo/taskwarrior.nvim")
+	use("andres-condezo/taskwarrior.nvim")
 
 	-- Ruby / Rails
 	use("kana/vim-textobj-user")
