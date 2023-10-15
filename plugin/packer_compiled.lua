@@ -214,6 +214,11 @@ _G.packer_plugins = {
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/colorbuddy.nvim",
     url = "https://github.com/tjdevries/colorbuddy.nvim"
   },
+  ["conceal.nvim"] = {
+    loaded = true,
+    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/conceal.nvim",
+    url = "https://github.com/Jxstxs/conceal.nvim"
+  },
   ["copilot.vim"] = {
     loaded = true,
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/copilot.vim",
@@ -594,15 +599,10 @@ _G.packer_plugins = {
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/targets.vim",
     url = "https://github.com/wellle/targets.vim"
   },
-  ["taskwarrior.nvim"] = {
-    loaded = true,
-    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/taskwarrior.nvim",
-    url = "https://github.com/andres-condezo/taskwarrior.nvim"
-  },
   taskwiki = {
     loaded = true,
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/taskwiki",
-    url = "https://github.com/tools-life/taskwiki"
+    url = "https://github.com/andres-condezo/taskwiki"
   },
   ["telescope-media-files.nvim"] = {
     loaded = true,
@@ -878,7 +878,7 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'vim-markdown', 'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim', 'vim-markdown'}, { ft = "markdown" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]

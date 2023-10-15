@@ -91,6 +91,14 @@ keymap("n", "<A-r>", ":Reload<CR>", opts)
 
 -- keymap('n', 'mmw', 'lua telescope_vimwiki_categories_picker()<CR>', opts)
 
+-- TODO: Create a separate file. 
+local hr = tonumber(os.date('%H', os.time()))
+if hr > 6 and hr < 15 then -- day between 6am and 3pm
+  vim.opt.background = 'light'
+else -- night
+  vim.opt.background = 'dark'
+end
+
 keymap(
 	"n",
 	"ñd",

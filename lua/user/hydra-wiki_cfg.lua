@@ -11,10 +11,15 @@ Hydra({
 		on_enter = function()
 			-- vim.bo.modifiable = false
 			vim.cmd("let g:table_mode_corner='|'")
-			vim.cmd("colorscheme everforest")
+			local bg = vim.opt.background:get()
+			if bg == "light" then
+				vim.cmd("colorscheme everforest")
+			else
+				vim.cmd("colorscheme miramare")
+			end
 		end,
 		on_exit = function()
-			vim.cmd("colorscheme codedark")
+			vim.cmd("colorscheme vscode")
 			vim.cmd("echo") -- clear the echo area
 		end,
 	},
@@ -28,6 +33,9 @@ Hydra({
 		{ "H", ":VimwikiGoBackLink<CR>", { silent = true } },
 		{ "J", ":VimwikiNextLink<CR>", { silent = true } },
 		{ "K", ":VimwikiPrevLink<CR>", { desc = "<-Motion|", silent = true } },
+		{ "W", ":vsplit<CR>|:TW<CR>", { silent = true } },
+		{ "R", ":TaskWikiBufferLoad<CR>", { silent = true } },
+		{ "+", ":!task add 📍  due:today+" .. string.rep("<Left>", 11), { silent = true } },
 
 		-- Quit
 		{ "<Esc>", nil, { exit = true } },
@@ -67,9 +75,17 @@ vim.cmd([[
 -- let g:vimwiki_listsyms = ' ○✗'
 -- let g:vimwiki_listsyms = ' ○◐●✗'
 require("telescope").load_extension("vimwiki")
-require("taskwarrior_nvim").setup({
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-})
+
+-- taskwarrior_nvim
+-- require("taskwarrior_nvim").setup({})
 -- require("taskwarrior_nvim").browser({"ready"})
+
+-- taskwiki
+vim.cmd([[
+	let g:taskwiki_sort_orders={"S": "status+,priority+","P": "priority+", "U": "status-"}
+]])
+
+-- vim-taskwarrior
+-- vim.cmd([[
+-- 	let g:task_rc_override     = 'rc.defaultwidth=999999999'
+-- ]])
