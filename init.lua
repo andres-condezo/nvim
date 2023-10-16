@@ -88,7 +88,7 @@ require("user.conceal_cfg")
 -- To Check
 -- require "user.shade"
 -- require "user.eslint_cfg"
--- require "user.winbar"
+require "user.winbar"
 -- require "user.ale_cfg"
 -- require "user.tokyodark_cfg"
 -- require "user.tokyonight_cfg"

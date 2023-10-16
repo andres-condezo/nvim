@@ -180,7 +180,7 @@ return packer.startup(function(use)
 	} })
 	use({ "ziontee113/color-picker.nvim" })
 	use({ "norcalli/nvim-colorizer.lua" })
-	-- use { 'fgheng/winbar.nvim' }
+	use { 'fgheng/winbar.nvim' }
 	-- use({
 	--   "utilyre/barbecue.nvim",
 	--   tag = "*",
@@ -194,6 +194,8 @@ return packer.startup(function(use)
 	--   end,
 	-- })
 	-- use ("SmiteshP/nvim-navic")
+
+use("nvim-treesitter/nvim-treesitter-context")
 
 	use({
 		"folke/todo-comments.nvim",
