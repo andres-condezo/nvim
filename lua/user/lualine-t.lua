@@ -9,7 +9,7 @@ if not status_theme_ok then
 end
 
 vim.api.nvim_set_hl(0, "SLGitIcon", { fg = "#E8AB53", bg = "none" })
-vim.api.nvim_set_hl(0, "SLBranchName", { fg = "#D4D4D4", bg = "none", bold = false })
+vim.api.nvim_set_hl(0, "SLBranchName", { fg = "#252525", bg = "none", bold = true })
 vim.api.nvim_set_hl(0, "SLProgress", { fg = "black", bg = "none" })
 vim.api.nvim_set_hl(0, "SLSeparator", { fg = "#808080", bg = "none" })
 local mode_color = {
@@ -100,13 +100,13 @@ local filetype = {
 
 local branch = {
   color = function()
-    return { fg = "black", bg = "none" }
+    return { fg = "#252525", bg = "none" }
   end,
   "branch",
-  icons_enabled = false,
+  icons_enabled = true,
   icon = "%#SLGitIcon#" .. "" .. "%*" .. "%#SLBranchName#",
-  -- color = "Constant",
-  colored = false,
+  color = "#252525",
+  colored = true,
   separator = "%#SLSeparator#" .. "│ " .. "%*",
 }
 

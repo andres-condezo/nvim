@@ -85,4 +85,22 @@ function M.Delmarks()
   end
 end
 
+M.toggleConceal = function(level)
+  local state = vim.o.conceallevel
+  if state ~= 0 then
+      vim.o.conceallevel = 0
+  else
+      vim.o.conceallevel = 2
+  end
+end
+
+M.toggleCmdHeight = function()
+  local state = vim.o.cmdheight
+  if state ~= 1 then
+      vim.o.cmdheight = 1
+  else
+      vim.o.cmdheight = 2
+  end
+end
+
 return M

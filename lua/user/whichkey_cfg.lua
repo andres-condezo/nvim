@@ -114,6 +114,15 @@ local w_opts = {
   nowait = true, -- use `nowait` when creating keymaps
 }
 
+local w_v_opts = {
+  mode = "x", -- VISUAL mode
+  prefix = ",",
+  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+  silent = true, -- use `silent` when creating keymaps
+  noremap = true, -- use `noremap` when creating keymaps
+  nowait = true, -- use `nowait` when creating keymaps
+}
+
 local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   ["b"] = { "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({}))<cr>",
@@ -199,7 +208,7 @@ local mappings = {
     c = { "<cmd>SessionManager load_current_dir_session<cr>", "Load current session" },
     d = { "<cmd>SessionManager delete_session<cr>", "Delete session" },
     l = { "<cmd>SessionManager load_session<cr>", "Load session" },
-    s = { "<cmd>lua savedSession()<CR>", "Save session" },
+    s = { "<cmd>lua saveSession()<CR>", "Save session" },
   },
 
   p = {
@@ -223,6 +232,7 @@ local mappings = {
     p = { "<cmd>Telescope projects<cr>", "Projects" },
     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
     R = { "<cmd>Telescope registers<cr>", "Registers" },
+    s = { "<cmd>Telescope spell_suggest<cr>", "Spell suggestions" },
     t = { "<cmd>TodoTelescope<cr>", "Todos" },
   },
 
@@ -242,7 +252,7 @@ local mappings = {
     q = { "<cmd>wa | :qa<CR>", "Save all buffer and exit" },
     a = { "<cmd>wa<CR>", "Save all buffers" },
     e = { "<cmd>wq<CR>", "Save current buffer and close it" },
-    s = { "<cmd>execute 'silent! :w !sudo tee % > /dev/null' | edit!<CR>", "Save with sudo permission" },
+    s = { "<cmd>execute ':w !sudo tee % > /dev/null' | edit!<CR>", "Save with sudo permission" },
     w = { "<cmd>w!<CR>", "Save current buffer" },
     t = { "ggVGy:q!<CR>", "quit" },
   },
@@ -258,18 +268,18 @@ local mappings = {
 }
 
 local more_mappings = {
-  ["c"] = { "<cmd>:Telescope neoclip<CR>jk", "Neo clip" },
+  ["c"] = { "<cmd>:Telescope neoclip<CR>", "Neo clip" },
   ["n"] = { "<cmd>Telescope notify<CR>", "Show notifications" },
   ["r"] = { ":SearchBoxReplace confirm=menu<CR>", "Replace" },
   ["s"] = { ":SearchBoxMatchAll clear_matches=true<CR>", "Search" },
-  ["$"] = { "<cmd>lua showDate()<CR>jk", "Show date and time" },
+  ["$"] = { "<cmd>lua showDate()<CR>", "Show date and time" },
 
   f = {
     name = "Folds",
     a = { "zfa", "Fold all ..."},
     c = { "zM | zo | zz", "Fold all except current one"},
-    d = { "<cmd>UfoDisableFold<CR>", "Fold all except current one"},
-    D = { "<cmd>:autocmd! Ufo TextChanged * | :autocmd! Ufo InsertLeave * | :autocmd! Ufo BufWritePost * | :autocmd! Ufo CmdlineLeave *  <CR>", "Fold OnChange Disabled" },
+    D = { "<cmd>UfoDisableFold<CR>", "ufo disable fold"},
+    d = { "<cmd>:autocmd! Ufo TextChanged * | :autocmd! Ufo InsertLeave * | :autocmd! Ufo BufWritePost * | :autocmd! Ufo CmdlineLeave *  <CR>", "Fold OnChange Disabled" },
     f = { "zM", "Close all folds" },
     l = { "<cmd>:loadview<CR>", "Load folds"},
     n = { "<cmd>:lua require'user.toggleOpt'.toggleFoldCol()<CR>", "Toggle fold column" },
@@ -291,10 +301,17 @@ local more_mappings = {
 
   t = {
     name = "Toggle",
-    c = { "<cmd>:lua require'user.toggleOpt'.toggleCalendar()<CR>", "Toggle Calendar" },
+    c = { "<cmd>:lua require'user.toggleOpt'.toggleConceal()<CR>", "Toggle Conceal" },
+    C = { "<cmd>:lua require'user.toggleOpt'.toggleCalendar()<CR>", "Toggle Calendar" },
     f = { "<cmd>:lua require'user.toggleOpt'.toggleFoldCol()<CR>", "Toggle fold column" },
+    h = { "<cmd>:lua require'user.toggleOpt'.toggleCmdHeight()<CR>", "Toggle CmdLine height" },
+    i = { "<cmd>TranslateW --target_lang=EN --source_lang=ES<CR>", "Translate to En" },
+    s = { "<cmd>TranslateW --target_lang=ES --source_lang=EN<CR>", "Translate to Es" },
     n = { "<cmd>:lua require'user.toggleOpt'.toggleRelativeNumber()<CR>", "Toggle relative numbers" },
-    t = { "<cmd>:lua require'user.toggleOpt'.toggleTabLine()<CR>", "Toggle Tabline" },
+    t = {
+      "<cmd>:lua require'user.toggleOpt'.toggleTabLine()<CR>",
+      "Toggle Tabline",
+    },
     w = { "<cmd>:lua require'user.toggleOpt'.toggleWrap()<CR>", "Toggle Wrap" },
   },
 
@@ -302,6 +319,7 @@ local more_mappings = {
     name = "Zen",
     a = { "<cmd>:TZAtaraxis<CR>", "Ataraxis mode" },
     f = { "<cmd>:TZFocus<CR>", "Focus mode" },
+    -- g = { "<cmd>:Goyo<CR>", "Goyo mode" },
     m = { "<cmd>:TZMinimalist<CR>", "Minimalist mode" },
     t = { "<cmd>:Twilight<CR>", "Twilight mode" },
     z = { "<cmd>ZenMode<CR>", "Zen mode" },
@@ -330,24 +348,41 @@ local v_mappings = {
 local more_v_mappings = {
   ["s"] = { ":SearchBoxMatchAll clear_matches=true<CR>", "Search" },
   ["r"] = { "<cmd>SearchBoxReplace confirm=menu visual_mode=true<CR>", "Replace" },
+  t = {
+    name = "Translate",
+    i = { ":'<,'>TranslateW --target_lang=EN --source_lang=ES<CR>", "Translate to En" },
+    s = { ":'<,'>TranslateW --target_lang=ES --source_lang=EN<CR>", "Translate to Es" },
+  },
 }
 
 local w_mappings = {
   ["d"] = { "<Plug>VimwikiDeleteFile", "Delete file" },
   ["k"] = { "<Plug>VimwikiIndex", "VimWiki index" },
   ["i"] = { "<Plug>VimwikiDiaryIndex", "VimWiki diary index" },
-  ["s1"] = { "<cmd>Telescope vimwiki i=0<CR>", "VimWiki Select" },
-  ["s2"] = { "<cmd>Telescope vimwiki i=1<CR>", "VimWiki Select" },
-  ["s3"] = { "<cmd>Telescope vimwiki i=2<CR>", "VimWiki Select" },
-  ["g1"] = { "<cmd>Telescope vimwiki live_grep i=0<CR>", "VimWiki grep" },
-  ["g2"] = { "<cmd>Telescope vimwiki live_grep i=1<CR>", "VimWiki grep" },
-  ["g3"] = { "<cmd>lua require('telescope').extensions.vw.live_grep({default_text = 'keymaps'})<cr>", "VimWiki grep" },
-  ["t"] = { "<Plug>VimwikiMakeDiaryNote", "Today's diary" },
+  ["o"] = { ":ObsidianOpen<CR>", "Obsidian open file" },
+  s = {
+    name = "VimWiki Select",
+    p = { "<cmd>Telescope vimwiki i=0<CR>", "Personal"},
+    t = { "<cmd>Telescope vimwiki i=1<CR>", "Tech"},
+    s = { "<cmd>Telescope vimwiki i=2<CR>", "Shoping"},
+  },
+  g = {
+    name = "VimWiki Grep",
+    p = { "<cmd>Telescope vimwiki live_grep i=0<CR>", "Personal"},
+    t = { "<cmd>Telescope vimwiki live_grep i=1<CR>", "Tech"},
+    s = { "<cmd>lua require('telescope').extensions.vw.live_grep({default_text = 'keymaps'})<cr>", "search"},
+  },
+  -- ["t"] = { "<Plug>VimwikiMakeDiaryNote", "Today's diary" },
+  ["t"] = { ":ObsidianToday<CR>", "Today's diary" },
   ["y"] = { "<Plug>VimwikiMakeYesterdayDiaryNote", "Yesterday's diary" },
   ["m"] = { "<Plug>VimwikiMakeTomorrowDiaryNote", "Tomorrow's diary" },
   ["u"] = { "<Plug>VimwikiDiaryGenerateLinks", "Wiki index update" },
   ["x"] = { "<cmd>VimwikiUISelec<CR>", "Wiki UI Select" },
   ["n"] = { "<Plug>VimwikiNextLink" }
+}
+
+local w_v_mappings = {
+  ["wl"] = { ":ObsidianLinkNew<CR>", "Obsidian Create Link" },
 }
 
 which_key.setup(setup)
@@ -356,3 +391,4 @@ which_key.register(v_mappings, v_opts)
 which_key.register(more_mappings, more_opts)
 which_key.register(more_v_mappings, more_v_opts)
 which_key.register(w_mappings,w_opts)
+which_key.register(w_v_mappings,w_v_opts)

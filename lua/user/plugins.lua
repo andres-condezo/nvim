@@ -111,9 +111,6 @@ return packer.startup(function(use)
 	use("0x100101/Shade.nvim")
 	use("tjdevries/colorbuddy.nvim")
 	use("onsails/lspkind.nvim")
-	use({ "folke/zen-mode.nvim" })
-	use("Pocco81/TrueZen.nvim")
-	use({ "folke/twilight.nvim" })
 
 	-- Code runner --
 	use({ "metakirby5/codi.vim" })
@@ -121,26 +118,17 @@ return packer.startup(function(use)
 	use({ "is0n/jaq-nvim" })
 
 	-- Markdown --
+	-- use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
+	use("saimo/peek.nvim")
+
 	use({
 		"iamcco/markdown-preview.nvim",
 		run = function()
 			vim.fn["mkdp#util#install"]()
 		end,
-		setup = function()
-			vim.g.mkdp_browser = "firefox"
-			vim.g.mkdp_open_to_the_world = 1
-			vim.g.mkdp_port = "57843"
-		end,
-		ft = {
-			"markdown",
-		},
+		ft = { "markdown" },
 	})
-	use({
-		"mzlogin/vim-markdown-toc",
-		cmd = {
-			"GenTocGFM",
-		},
-	})
+	use("mzlogin/vim-markdown-toc")
 	use({ "godlygeek/tabular" })
 	use({
 		"preservim/vim-markdown",
@@ -149,6 +137,44 @@ return packer.startup(function(use)
 		},
 	})
 	use({ "dhruvasagar/vim-table-mode" })
+	-- use("lukas-reineke/headlines.nvim")
+
+	use("zhaozg/vim-diagram")
+	use("aklt/plantuml-syntax")
+
+	-- VimWiki
+	use("vimwiki/vimwiki")
+	use("ElPiloto/telescope-vimwiki.nvim")
+	use("mattn/calendar-vim")
+	-- use("tools-life/taskwiki")
+	use("andres-condezo/taskwiki")
+	use("farseer90718/vim-taskwarrior")
+	-- use("ribelo/taskwarrior.nvim")
+	-- use("andres-condezo/taskwarrior.nvim")
+	use("Jxstxs/conceal.nvim")
+	use("epwalsh/obsidian.nvim")
+
+	-- latex
+	use("lervag/vimtex")
+	use("sotte/presenting.vim")
+	use("xuhdev/vim-latex-live-preview")
+
+	-- other
+	use("Sanhajio/synonyms.vim")
+	use("voldikss/vim-translator")
+	use("folke/paint.nvim")
+	use({
+		'Wansmer/treesj',
+		requires = { 'nvim-treesitter/nvim-treesitter' },
+		config = function()
+			require('treesj').setup({--[[ your config ]]})
+		end,
+	})
+
+	use({ "folke/zen-mode.nvim" })
+	use("Pocco81/TrueZen.nvim")
+	use({ "folke/twilight.nvim" })
+	use("junegunn/goyo.vim")
 
 	-- MORE --
 	use("psliwka/vim-smoothie")
@@ -201,17 +227,6 @@ use("nvim-treesitter/nvim-treesitter-context")
 		"folke/todo-comments.nvim",
 		requires = "nvim-lua/plenary.nvim",
 	})
-
-	-- VimWiki
-	use("vimwiki/vimwiki")
-	use("ElPiloto/telescope-vimwiki.nvim")
-	use("mattn/calendar-vim")
-	-- use("tools-life/taskwiki")
-	use("andres-condezo/taskwiki")
-	use("farseer90718/vim-taskwarrior")
-	-- use("ribelo/taskwarrior.nvim")
-	-- use("andres-condezo/taskwarrior.nvim")
-	use("Jxstxs/conceal.nvim")
 
 	-- Ruby / Rails
 	use("kana/vim-textobj-user")
@@ -300,7 +315,7 @@ use("nvim-treesitter/nvim-treesitter-context")
 	use("github/copilot.vim")
 
 	-- Telescope
-	use({ "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" })
+	use("nvim-telescope/telescope.nvim")
 	use("nvim-telescope/telescope-ui-select.nvim")
 	use("tom-anders/telescope-vim-bookmarks.nvim")
 	use("nvim-telescope/telescope-media-files.nvim")
@@ -308,25 +323,12 @@ use("nvim-treesitter/nvim-treesitter-context")
 	use({ "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim" })
 
 	-- Treesitter
-	-- use {
-	--   "nvim-treesitter/nvim-treesitter",
-	--   commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
-	-- }
-	-- use {
-	-- "nvim-treesitter/nvim-treesitter",
-	-- tag = "v0.8.0",
-	-- }
-	use({
-		"nvim-treesitter/nvim-treesitter",
-	})
+	use("nvim-treesitter/nvim-treesitter")
 	use({ "m-demare/hlargs.nvim" })
 	-- use { "p00f/nvim-ts-rainbow" }
-
-	-- use { "hiphish/rainbow-delimiters.nvim" }
+	use { "hiphish/rainbow-delimiters.nvim" }
 	-- use("https://gitlab.com/HiPhish/rainbow-delimiters.nvim")
-
 	use("nvim-treesitter/nvim-treesitter-textobjects")
-
 	use("windwp/nvim-ts-autotag")
 
 	-- Git

@@ -1,12 +1,13 @@
 local Hydra = require('hydra')
 
 Hydra({
+   name='WIN',
    mode = 'n',
    body = ',hw',
    config = {
       timeout = 8000,
       hint = {
-         border = 'rounded'
+         type = "window" 
       }
    },
    heads = {

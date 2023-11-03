@@ -18,7 +18,7 @@ conceal.setup({
         enabled = true -- to disable concealing for "local"
       },
       ["return"] = {
-        conceal = "R" -- to set the concealing to "R"
+        conceal = "Ret" -- to set the concealing to "R"
       },
     },
     ["lua"] = {
@@ -26,12 +26,15 @@ conceal.setup({
         enabled = true -- to disable concealing for "local"
       },
       ["return"] = {
-        conceal = "R" -- to set the concealing to "R"
+        conceal = "Ret" -- to set the concealing to "R"
       },
       ["for"] = {
         highlight = "keyword" -- to set the Highlight group to "@keyword"
       }
     },
+    ["python"] = {
+      enabled = false -- to disable the whole language
+    }
     -- ["language"] = {
     --   enabled = true -- to disable the whole language
     -- }

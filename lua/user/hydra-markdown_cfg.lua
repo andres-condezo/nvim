@@ -1,6 +1,7 @@
 local Hydra = require('hydra')
 
 Hydra({
+   name='MD',
    config = {
       color = 'pink',
       invoke_on_body = true,
@@ -21,38 +22,38 @@ Hydra({
    mode = {'n','x'},
    body = ',hm',
    heads = {
-      -- Index
-      { 'II', '<C-w>h', { silent = true } },
-      { 'IP', '<cmd>Toc<CR><C-w>H<cmd>vertical resize 30<CR><CR>', { silent = true } },
-      { 'gi', ':GenTocGFM<CR>', { desc = "<-Index|", silent = true } },
-
       -- Nav
       { 'J', '<Plug>Markdown_MoveToNextHeader', { silent = true } },
       { 'K', '<Plug>Markdown_MoveToPreviousHeader', { silent = true } },
       { 'L', '<Plug>Markdown_MoveToNextSiblingHeader', { silent = true } },
       { 'H', '<Plug>Markdown_MoveToPreviousSiblingHeader', { silent = true } },
+      { 'E', '<Plug>Markdown_MoveToParentHeader', { silent = true } },
+
       { 'ge', '<Plug>Markdown_EditUrlUnderCursor', { silent = true } },
-      { 'gu', '<Plug>Markdown_MoveToParentHeader', { silent = true } },
-      { 'gx', '<Plug>Markdown_OpenUrlUnderCursor', { desc = "<-Nav|", silent = true } },
+      { 'gl', '<Plug>Markdown_OpenUrlUnderCursor', { desc = "<-Nav", silent = true } },
+
+      -- Index
+      { 'Ir', '<C-w>h<cmd>vertical resize 20<CR><CR>', { silent = true } },
+      { 'Ip', '<cmd>Toc<CR><C-w>H<cmd>vertical resize 20<CR><CR>', { silent = true } },
+      { 'gi', ':GenTocGFM<CR>', { desc = "<-Ix", silent = true } },
 
       -- Mode
-      { 'gm', ':set filetype=markdown<CR>', { silent = true } },
-      { 'gw', ':set filetype=vimwiki<CR>', { silent = true } },
-      { 'P', ':MarkdownPreviewToggle<CR>', { silent = true } },
-      { 'T', ':TableModeToggle<CR>', { silent = true } },
+      { 'Pp', "<cmd>PeekOpen<CR>",{ silent = true } },
+      { 'Pf', "<cmd>MarkdownPreviewToggle<CR>",{ silent = true } },
+      { 'gm', '<cmd>set filetype=markdown<CR>', { silent = true } },
+      { 'gw', '<cmd>set filetype=vimwiki<CR>', { silent = true } },
+      { 'Tt', '<cmd>TableModeToggle<CR>', { silent = true } },
       { 'X', '<cmd>Toc<CR><C-w>H<cmd>vertical resize 20<CR><CR> \
      | :TableModeEnable<CR> \
-     | :MarkdownPreviewToggle<CR>', { desc = "<-Mode|", silent = true } },
+     | :MarkdownPreviewToggle<CR>', { silent = true } },
 
-      -- Resize
-      { 'F', '<cmd>TableFormat<CR>', { desc = "<-Format|", silent = true } },
-
-      -- Resize
-      { '+', ':HeaderIncrease<CR>', { silent = true } },
-      { '-', ':HeaderDecrease<CR>', { desc = "<-Resize|", silent = true } },
+      -- Format 
+      { 'Tf', '<cmd>TableFormat<CR>', { silent = true } },
+      { 'Tl', ':Tabularize /', { silent = true } },
+      { '+', '<cmd>HeaderIncrease<CR>', { silent = true } },
+      { '-', '<cmd>HeaderDecrease<CR>', { silent = true } },
 
       -- Quit
-      { '<Esc>', nil,  { exit = true }},
       { 'q', nil, { exit = true, nowait = true } },
    }
 })

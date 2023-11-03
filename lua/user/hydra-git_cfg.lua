@@ -2,30 +2,30 @@ local Hydra = require('hydra')
 local gitsigns = require('gitsigns')
 
 local hint = [[
- _J_: next hunk   _s_: stage hunk        _d_: show deleted   _b_: blame line
- _K_: prev hunk   _u_: undo stage hunk   _p_: preview hunk   _B_: blame show full 
- ^ ^              _S_: stage buffer      ^ ^                 _/_: show base file
- ^
- ^ ^              _<Enter>_: Neogit              _q_: exit
+ _J_:next hunk  _s_:stage hunk       _d_:show deleted  _b_:blame line       _S_:stage buffer
+ _K_:prev hunk  _u_:undo stage hunk  _p_:preview hunk  _B_:blame show full  _/_:show base file  
+ ^ ^              _<Enter>_:Neogit              _q_:exit
 ]]
 
 Hydra({
+   name='GIT',
    hint = hint,
    config = {
       color = 'pink',
       invoke_on_body = true,
       hint = {
          position = 'bottom',
-         border = 'rounded'
+         border = 'rounded',
+         offset = -5
       },
       on_enter = function()
          vim.bo.modifiable = false
          gitsigns.toggle_signs(true)
          gitsigns.toggle_linehl(true)
-         vim.cmd "colorscheme kanagawa"
+         -- vim.cmd "colorscheme kanagawa"
       end,
       on_exit = function()
-         vim.cmd "colorscheme codedark"
+         -- vim.cmd "colorscheme codedark"
          gitsigns.toggle_signs(false)
          gitsigns.toggle_linehl(false)
          gitsigns.toggle_deleted(false)

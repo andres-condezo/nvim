@@ -19,7 +19,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "markdown" },
 	callback = function()
-		vim.opt_local.wrap = true
+		-- vim.opt_local.wrap = true
 		vim.opt_local.spell = true
 	end,
 })
@@ -91,7 +91,7 @@ end
 vim.cmd "command! Reload execute 'lua reloadSources()'"
 
 -- Save current session
-_G.savedSession = function ()
+_G.saveSession = function ()
   vim.cmd(':SessionManager save_current_session')
   vim.notify("Saved session", "info", { title = "Session Manager" })
 end
