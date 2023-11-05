@@ -221,12 +221,16 @@ return packer.startup(function(use)
 	-- })
 	-- use ("SmiteshP/nvim-navic")
 
-use("nvim-treesitter/nvim-treesitter-context")
+	use("nvim-treesitter/nvim-treesitter-context")
 
 	use({
 		"folke/todo-comments.nvim",
 		requires = "nvim-lua/plenary.nvim",
 	})
+	use { 'anuvyklack/animation.nvim', 
+		 requires = 'anuvyklack/middleclass'
+	}
+	use ('ElPiloto/significant.nvim')
 
 	-- Ruby / Rails
 	use("kana/vim-textobj-user")

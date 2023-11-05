@@ -55,6 +55,12 @@ Hydra({
 		{ 'Pr', "<cmd>MarkdownPreviewToggle<CR>|:MarkdownPreviewToggle<CR>",{ silent = true } },
 		{ 'Ip', '<cmd>Toc<CR><C-w>H<cmd>vertical resize 20<CR><CR>', { silent = true } },
 		{ 'Ir', '<C-w>h<cmd>vertical resize 20<CR><CR>', { silent = true } },
+		-- Table mode
+		{ 'Tt', '<cmd>TableModeToggle<CR>', { silent = true } },
+		{ 'Tf', '<cmd>TableFormat<CR>', { silent = true } },
+		{ 'Tl', ':Tabularize /', { silent = true } },
+		{ 'W', ': e <C-r>+<CR>|:echo ""<CR>', { silent = true } },
+
 
 		-- Quit
 		{ "q", nil, { exit = true, nowait = true } },

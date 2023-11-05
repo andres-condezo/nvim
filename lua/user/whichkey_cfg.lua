@@ -125,6 +125,9 @@ local w_v_opts = {
 
 local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
+  ["Ab"] = { "<cmd>lua require('user.animation').redraw_buffer()<cr>", "Animation buffer" },
+  ["As"] = { ":lua require('significant').start_animated_sign(10, 'dots4', 300)", "Animation sign column" },
+  ["Ac"] = { "<cmd>CellularAutomaton make_it_rain<cr>", "Animation cellular" },
   ["b"] = { "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({}))<cr>",
   "Buffers list" },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },

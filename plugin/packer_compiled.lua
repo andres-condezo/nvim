@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
   },
+  ["animation.nvim"] = {
+    loaded = true,
+    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/animation.nvim",
+    url = "https://github.com/anuvyklack/animation.nvim"
+  },
   ["aquarium-vim"] = {
     loaded = true,
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/aquarium-vim",
@@ -376,6 +381,11 @@ _G.packer_plugins = {
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/material.nvim",
     url = "https://github.com/marko-cerovac/material.nvim"
   },
+  middleclass = {
+    loaded = true,
+    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/middleclass",
+    url = "https://github.com/anuvyklack/middleclass"
+  },
   miramare = {
     loaded = true,
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/miramare",
@@ -605,6 +615,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/searchbox.nvim",
     url = "https://github.com/VonHeikemen/searchbox.nvim"
+  },
+  ["significant.nvim"] = {
+    loaded = true,
+    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/significant.nvim",
+    url = "https://github.com/ElPiloto/significant.nvim"
   },
   sniprun = {
     loaded = true,
@@ -945,7 +960,7 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'vim-markdown', 'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim', 'vim-markdown'}, { ft = "markdown" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]

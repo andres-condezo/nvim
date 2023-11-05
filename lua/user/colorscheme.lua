@@ -12,7 +12,7 @@ local function getColorScheme(number)
     return colorschemes[number][2]
 end
 
-local colorscheme = getColorScheme(7)
+local colorscheme = getColorScheme(1)
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
