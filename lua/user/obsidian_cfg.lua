@@ -7,19 +7,19 @@ obsidian.setup({
   workspaces = {
     {
       name = "personal",
-      path = "~/vimwiki/personal/Spaces/Home/",
+      path = "/media/adrs/TOSHIBA/vimwiki/personal/Spaces/Home/",
     },
     {
       name = "work",
-      path = "~/vimwiki/obsidian/work",
+      path = "/media/adrs/TOSHIBA/vimwiki/obsidian/work",
     },
     {
       name = "testing",
-      path = "~/vimwiki/obsidian/hello_vault/",
+      path = "/media/adrs/TOSHIBA/vimwiki/obsidian/hello_vault/",
     },
     {
       name = "old",
-      path = "~/vimwiki/personal/",
+      path = "/media/adrs/TOSHIBA/vimwiki/personal/",
     },
   },
   disable_frontmatter = false,

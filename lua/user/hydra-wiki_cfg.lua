@@ -69,7 +69,7 @@ Hydra({
 
 vim.cmd([[
    let old_wiki = {}
-   let old_wiki.path = '~/vimwiki/personal/'
+   let old_wiki.path = '/media/adrs/TOSHIBA/vimwiki/personal/'
    let old_wiki.index = 'main'
    let old_wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'javascript': 'js', 'ruby': 'rb'}
    let old_wiki.auto_diary_index = 1
@@ -77,7 +77,7 @@ vim.cmd([[
    let old_wiki.ext = '.md'
 
    let personal_wiki = {}
-   let personal_wiki.path = '~/vimwiki/personal/Spaces/Home/'
+   let personal_wiki.path = '/media/adrs/TOSHIBA/vimwiki/personal/Spaces/Home/'
    let personal_wiki.index = 'index'
    let personal_wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'javascript': 'js', 'ruby': 'rb'}
    let personal_wiki.auto_diary_index = 1
@@ -85,7 +85,7 @@ vim.cmd([[
    let personal_wiki.ext = '.md'
 
    let tech_wiki = {}
-   let tech_wiki.path = '~/vimwiki/tech_docs/'
+   let tech_wiki.path = '/media/adrs/TOSHIBA/vimwiki/tech_docs/'
    let tech_wiki.index = 'index'
    let tech_wiki.html_template = '~/public_html/template.tpl'
    let tech_wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'javascript': 'js', 'ruby': 'rb'}
@@ -94,14 +94,14 @@ vim.cmd([[
    let tech_wiki.ext = '.md'
 
    let shopping_wiki = {}
-   let shopping_wiki.path = '~/vimwiki/shopping_docs/'
+   let shopping_wiki.path = '/media/adrs/TOSHIBA/vimwiki/shopping_docs/'
    let shopping_wiki.index = 'main'
    let shopping_wiki.auto_diary_index = 1
    let shopping_wiki.syntax = 'markdown'
    let shopping_wiki.ext = '.md'
 
    let hello_vault_wiki = {}
-   let shopping_wiki.path = '~/vimwiki/obsidian/hello_vault/'
+   let shopping_wiki.path = '/media/adrs/TOSHIBA/vimwiki/obsidian/hello_vault/'
    let shopping_wiki.index = 'main'
    let shopping_wiki.auto_diary_index = 1
    let shopping_wiki.syntax = 'markdown'
