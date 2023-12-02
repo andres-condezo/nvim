@@ -1,5 +1,6 @@
 ;; extends 
 
+((function_call name: (identifier) @function.builtin (#eq? @function.builtin "require")) (#set! conceal "r"))
 (("return" @keyword.function) (#set! conceal "R"))
 (("then" @conditional) (#set! conceal "t"))
 (("else" @conditional) (#set! conceal "e"))
@@ -11,5 +12,4 @@
 (("in" @keyword) (#set! conceal "i"))
 (("local" @keyword) (#set! conceal "l"))
 (("do" @repeat) (#set! conceal "d"))
-((function_call name: (identifier) @function.builtin (#eq? @function.builtin "require")) (#set! conceal "r"))
 (("and" @keyword.function) (#set! conceal "&"))

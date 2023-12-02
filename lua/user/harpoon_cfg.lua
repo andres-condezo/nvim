@@ -12,7 +12,7 @@ keymap("n", "<leader><leader>ma", mark.add_file)
 keymap("n", "<leader><leader>mc", "<cmd>:DoShowMarks<CR>", silent)
 keymap("n", "<leader><leader>md", "<cmd>:lua require'user.toggleOpt'.Delmarks()<CR>", silent)
 
-local binds = 5
+local binds = 9
 for i = 1, binds do
 	keymap("n", "<leader>" .. i, function()
 		ui.nav_file(i)

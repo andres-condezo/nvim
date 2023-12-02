@@ -102,7 +102,7 @@ cmp.setup({
 				buffer = "[Buf]",
 				nvim_lsp = "[LSP]",
 				nvim_lua = "[LuaAPI]",
-				cmp_tabnine = "[TabNine]",
+				-- cmp_tabnine = "[TabNine]",
 				path = "[Path]",
 				emoji = "[emoji]",
 				npm = "[npm]",
@@ -115,7 +115,7 @@ cmp.setup({
 		{ name = "ultisnips" }, -- For ultisnips users.
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
-		{ name = "cmp_tabnine" },
+		-- { name = "cmp_tabnine" },
 		{ name = "buffer" },
 		{ name = "path" },
 		{ name = "emoji" },

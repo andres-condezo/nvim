@@ -7,7 +7,7 @@ obsidian.setup({
   workspaces = {
     {
       name = "personal",
-      path = "~/vimwiki/personal/",
+      path = "~/vimwiki/personal/Spaces/Home/",
     },
     {
       name = "work",
@@ -17,11 +17,15 @@ obsidian.setup({
       name = "testing",
       path = "~/vimwiki/obsidian/hello_vault/",
     },
+    {
+      name = "old",
+      path = "~/vimwiki/personal/",
+    },
   },
   disable_frontmatter = false,
   daily_notes = {
     -- Optional, if you keep daily notes in a separate directory.
-    folder = "diary",
+    folder = "calendar/diary",
     -- Optional, if you want to change the date format for the ID of daily notes.
     date_format = "%Y-%m-%d",
     -- Optional, if you want to change the date format of the default alias of daily notes.

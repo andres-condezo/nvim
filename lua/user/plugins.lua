@@ -154,6 +154,8 @@ return packer.startup(function(use)
 	use("Jxstxs/conceal.nvim")
 	use("epwalsh/obsidian.nvim")
 
+	use("ekickx/clipboard-image.nvim")
+
 	-- latex
 	use("lervag/vimtex")
 	use("sotte/presenting.vim")

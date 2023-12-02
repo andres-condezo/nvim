@@ -94,6 +94,7 @@ require("user.translate")
 require("user.presenting_cfg")
 require("user.peek_cfg")
 require("user.todo")
+require("user.clipboard-img_cfg")
 
 require "user.winbar"
 

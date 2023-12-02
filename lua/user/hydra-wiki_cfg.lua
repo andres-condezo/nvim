@@ -44,7 +44,7 @@ Hydra({
 		-- { "G", ":vsplit<CR>|:TW<CR>", { silent = true } },
 		{ "R", ":TaskWikiBufferLoad<CR>", { silent = false } },
 		{ "T", "<cmd>silent TaskWikiToggle<CR>", { silent = true } },
-		{ "+", "<cmd>FineCmdline<CR>!task add  due:today+" .. string.rep("<Left>", 11), { desc = "<Tsk", silent = true } },
+		{ "+", "<cmd>FineCmdline<CR>!task add  due:" .. string.rep("<Left>", 5), { desc = "<Tsk", silent = true } },
 
 		-- MD
 		{ "gm", "<cmd>set filetype=markdown<CR>", { silent = true } },
@@ -60,7 +60,7 @@ Hydra({
 		{ 'Tf', '<cmd>TableFormat<CR>', { silent = true } },
 		{ 'Tl', ':Tabularize /', { silent = true } },
 		{ 'W', ': e <C-r>+<CR>|:echo ""<CR>', { silent = true } },
-
+		{ 'Y', '<cmd>PasteImg<CR>', { silent = true } },
 
 		-- Quit
 		{ "q", nil, { exit = true, nowait = true } },
@@ -68,9 +68,17 @@ Hydra({
 })
 
 vim.cmd([[
+   let old_wiki = {}
+   let old_wiki.path = '~/vimwiki/personal/'
+   let old_wiki.index = 'main'
+   let old_wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'javascript': 'js', 'ruby': 'rb'}
+   let old_wiki.auto_diary_index = 1
+   let old_wiki.syntax = 'markdown'
+   let old_wiki.ext = '.md'
+
    let personal_wiki = {}
-   let personal_wiki.path = '~/vimwiki/personal/'
-   let personal_wiki.index = 'main'
+   let personal_wiki.path = '~/vimwiki/personal/Spaces/Home/'
+   let personal_wiki.index = 'index'
    let personal_wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'javascript': 'js', 'ruby': 'rb'}
    let personal_wiki.auto_diary_index = 1
    let personal_wiki.syntax = 'markdown'
@@ -99,7 +107,7 @@ vim.cmd([[
    let shopping_wiki.syntax = 'markdown'
    let shopping_wiki.ext = '.md'
 
-   let g:vimwiki_list = [personal_wiki, tech_wiki, shopping_wiki, hello_vault_wiki, {'auto_diary_index': 1}]
+   let g:vimwiki_list = [old_wiki, personal_wiki, tech_wiki, shopping_wiki, hello_vault_wiki, {'auto_diary_index': 1}]
    let g:vimwiki_markdown_link_ext = 1
 	 let g:vimwiki_listsyms = ' x'
 ]])
