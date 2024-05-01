@@ -9,6 +9,7 @@ local servers = {
 	"jsonls",
 	"yamlls",
 	"solargraph",
+	"intelephense",
 }
 
 local settings = {

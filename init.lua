@@ -31,7 +31,7 @@ require("user.hydra-windows_cfg")
 require("user.hydra-git_cfg")
 require("user.hydra-markdown_cfg")
 require("user.hydra-wiki_cfg")
-require("user.hydra-rest_cfg")
+-- require("user.hydra-rest_cfg")
 
 -- Plugins
 require("user.plugins")
@@ -49,7 +49,7 @@ require("user.toggleterm")
 require("user.illuminate")
 require("user.indentline")
 require("user.lsp")
-require("user.dap")
+-- require("user.dap")
 -- require "user.lualine"
 require("user.lualine-t_cfg")
 -- require "user.lualine-t"
@@ -63,7 +63,7 @@ require("user.custom-fold")
 require("user.leap_cfg")
 require("user.zen-mode_cfg")
 require("user.true-zen_cfg")
-require("user.snip-run_cfg")
+-- require("user.snip-run_cfg")
 require("user.jaq-nvim_cfg")
 require("user.twilight_cfg")
 require("user.nvim-neoclip_cfg")
@@ -96,7 +96,7 @@ require("user.peek_cfg")
 require("user.todo")
 require("user.clipboard-img_cfg")
 
-require "user.winbar"
+-- require "user.winbar"
 
 -- To Check
 -- require "user.shade"

@@ -441,21 +441,6 @@ _G.packer_plugins = {
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
-  ["nvim-dap"] = {
-    loaded = true,
-    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/nvim-dap",
-    url = "https://github.com/mfussenegger/nvim-dap"
-  },
-  ["nvim-dap-ui"] = {
-    loaded = true,
-    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
-    url = "https://github.com/rcarriga/nvim-dap-ui"
-  },
-  ["nvim-dap-virtual-text"] = {
-    loaded = true,
-    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text",
-    url = "https://github.com/theHamsta/nvim-dap-virtual-text"
-  },
   ["nvim-dap-vscode-js"] = {
     loaded = true,
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/nvim-dap-vscode-js",
@@ -601,11 +586,6 @@ _G.packer_plugins = {
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/rainbow-delimiters.nvim",
     url = "https://github.com/hiphish/rainbow-delimiters.nvim"
   },
-  ["rest.nvim"] = {
-    loaded = true,
-    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/rest.nvim",
-    url = "https://github.com/NTBBloodbath/rest.nvim"
-  },
   rnvimr = {
     loaded = true,
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/rnvimr",
@@ -625,11 +605,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/significant.nvim",
     url = "https://github.com/ElPiloto/significant.nvim"
-  },
-  sniprun = {
-    loaded = true,
-    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/sniprun",
-    url = "https://github.com/michaelb/sniprun"
   },
   spaceduck = {
     loaded = true,
@@ -754,16 +729,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/adrs/.local/share/nvim/site/pack/packer/start/vim-csscomb",
     url = "https://github.com/csscomb/vim-csscomb"
-  },
-  ["vim-dadbod"] = {
-    loaded = true,
-    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/vim-dadbod",
-    url = "https://github.com/tpope/vim-dadbod"
-  },
-  ["vim-dadbod-ui"] = {
-    loaded = true,
-    path = "/home/adrs/.local/share/nvim/site/pack/packer/start/vim-dadbod-ui",
-    url = "https://github.com/kristijanhusak/vim-dadbod-ui"
   },
   ["vim-diagram"] = {
     loaded = true,
@@ -965,7 +930,7 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'vim-markdown', 'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim', 'vim-markdown'}, { ft = "markdown" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]

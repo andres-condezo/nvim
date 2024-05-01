@@ -5,27 +5,24 @@ end
 
 obsidian.setup({
   workspaces = {
+-- /media/adrs/WIKI/vimwiki/personal
     {
       name = "personal",
-      path = "/media/adrs/TOSHIBA/vimwiki/personal/Spaces/Home/",
-    },
-    {
-      name = "work",
-      path = "/media/adrs/TOSHIBA/vimwiki/obsidian/work",
-    },
-    {
-      name = "testing",
-      path = "/media/adrs/TOSHIBA/vimwiki/obsidian/hello_vault/",
+      path = "/media/adrs/WIKI/vimwiki/personal/",
     },
     {
       name = "old",
-      path = "/media/adrs/TOSHIBA/vimwiki/personal/",
+      path = "/media/adrs/WIKI/vimwiki/old-wiki/",
+    },
+    {
+      name = "tech_docs",
+      path = "/media/adrs/WIKI/vimwiki/tech_docs/",
     },
   },
   disable_frontmatter = false,
   daily_notes = {
     -- Optional, if you keep daily notes in a separate directory.
-    folder = "calendar/diary",
+    folder = "10-calendar/diary",
     -- Optional, if you want to change the date format for the ID of daily notes.
     date_format = "%Y-%m-%d",
     -- Optional, if you want to change the date format of the default alias of daily notes.
@@ -45,5 +42,5 @@ obsidian.setup({
   -- Optional, if set to true, the specified mappings in the `mappings`
   -- table will overwrite existing ones. Otherwise a warning is printed
   -- and the mappings are not applied.
-  overwrite_mappings = true,
+  -- overwrite_mappings = true,
 })

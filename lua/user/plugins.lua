@@ -114,7 +114,7 @@ return packer.startup(function(use)
 
 	-- Code runner --
 	use({ "metakirby5/codi.vim" })
-	use({ "michaelb/sniprun", run = "bash ./install.sh" })
+	-- use({ "michaelb/sniprun", run = "bash ./install.sh" })
 	use({ "is0n/jaq-nvim" })
 
 	-- Markdown --
@@ -196,16 +196,16 @@ return packer.startup(function(use)
 	use({ "windwp/nvim-spectre" })
 	use({ "kmonad/kmonad-vim" })
 	-- use { 'dense-analysis/ale' }
-	use({
-		"NTBBloodbath/rest.nvim",
-		requires = { "nvim-lua/plenary.nvim" },
-	})
+	-- use({
+	-- 	"NTBBloodbath/rest.nvim",
+	-- 	requires = { "nvim-lua/plenary.nvim" },
+	-- })
 	use({ "https://github.com/tpope/vim-dotenv" })
-	use({ "tpope/vim-dadbod" })
-	use({ "kristijanhusak/vim-dadbod-ui", requires = {
-		"tpope/vim-dadbod",
-		"tpope/vim-dotenv",
-	} })
+	-- use({ "tpope/vim-dadbod" })
+	-- use({ "kristijanhusak/vim-dadbod-ui", requires = {
+	-- 	"tpope/vim-dadbod",
+	-- 	"tpope/vim-dotenv",
+	-- } })
 	use({ "ziontee113/color-picker.nvim" })
 	use({ "norcalli/nvim-colorizer.lua" })
 	use { 'fgheng/winbar.nvim' }
@@ -349,9 +349,9 @@ return packer.startup(function(use)
 	})
 
 	-- DAP
-	use("mfussenegger/nvim-dap")
-	use("theHamsta/nvim-dap-virtual-text")
-	use("rcarriga/nvim-dap-ui")
+	-- use("mfussenegger/nvim-dap")
+	-- use("theHamsta/nvim-dap-virtual-text")
+	-- use("rcarriga/nvim-dap-ui")
 
 	-- use({ "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" })
 
